@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script>
+
+        function printer(print, print2)
+        {
+            if (print2 != undefined)
+                if (document.getElementById("CO").checked)
+                    console.log (print, print2);
+                else
+                    alert (print, print2);
+            else
+            if (document.getElementById("CO").checked)
+                    console.log (print);
+                else
+                    alert (print);
+        }
+
+        function fun1 ()
+        {
+            var biggerThen = Number(prompt ("1. Please enter a number to be tested"));
+            if (biggerThen > 928 || biggerThen < 532)
+	            printer (biggerThen);
+        }
+
+        function fun2() 
+        {
+            var number1 = Number(prompt ("2. Please enter first number"));
+            var number2 = Number(prompt ("2. Please enter second number"));
+            if (number1 < number2)
+	            if (number2 < Number(prompt ("2. Please enter third number")))
+		            printer ("Increasing...");
+        }
+
+        function fun3 ()
+        {
+            if (Number(prompt ("3. Please enter first number")) < Number(prompt ("3. Please enter second number")))
+	            printer ("Growing...");
+        }
+
+        function fun4 ()
+        {
+            if (Number(prompt ("4. Please enter an integer number:"))%2)
+	            printer ("Odd");
+            else
+	            printer ("Even");
+        }
+
+        function fun5()
+        {
+            var number1 = Number(prompt ("5. Please enter first value"));
+            var number2 = Number(prompt ("5. Please enter second value"));
+            if (number1 < number2)
+	            printer (number1, number2)
+            else
+	            printer (number2, number1);
+        }
+
+        function fun6()
+        {
+            var number = Number(prompt ("6. Please enter a number"));
+	        if (number > 0)
+		        printer ("חיובי");
+	        else if (number)
+		        printer ("שלילי");
+	        else
+		        printer ("אפס");
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+    <label><input type="radio" name="inputMe" id="CO" checked/>Console</label>
+    <label><input type="radio" name="inputMe" id="AO"/> Only Alerts</label>
+    <!--<label><input type="radio" name="inputMe" value="In" /> Input</label>-->
+
+    <br />
+    <br />
+    <input type="button" value = "Task 1" onclick="fun1()">
+    <br /><br />
+    <input type="button" value = "Task 2" onclick="fun2()">
+    <br /><br />
+    <input type="button" value = "Task 3" onclick="fun3()">
+    <br /><br />
+    <input type="button" value = "Task 4" onclick="fun4()">
+    <br /><br />
+    <input type="button" value = "Task 5" onclick="fun5()">
+    <br /><br />
+    <input type="button" value = "Task 6" onclick="fun6()">
+
+</body>
+</html>
